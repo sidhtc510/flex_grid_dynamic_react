@@ -38,6 +38,8 @@ export default function Menu({ updateStyles }) {
         >
           <option value="row">row</option>
           <option value="column">column</option>
+          <option value="row-reverse">row-reverse</option>
+          <option value="column-reverse">column-reverse</option>
         </select>
       </div>
 

@@ -10,8 +10,6 @@ function App() {
     { ids: 1 },
     { ids: 2 },
     { ids: 3 },
-    { ids: 4 },
-    { ids: 5 },
   ];
 
   // const [items, setItems] = useState(itemsDefault)
