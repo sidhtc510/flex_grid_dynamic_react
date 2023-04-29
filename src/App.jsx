@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import ItemsContainer from "./components/ItemsContainer";
@@ -14,14 +14,23 @@ function App() {
     { ids: 5 },
   ];
 
-  const [items, setItems] = useState(itemsDefault);
+  // const [items, setItems] = useState(itemsDefault)
+  const [items, setItems] = useState(() => {
+    return JSON.parse(localStorage.getItem("quantity")) ?? localStorage.setItem("quantity", JSON.stringify(itemsDefault)); // можно ли так записать в ЛС? без использования useEffect
+  });
+
+  useEffect(() => {
+    localStorage.setItem("quantity", JSON.stringify(items));
+  }, [items]);
 
   const minusItem = () => {
     items.pop();
     setItems([...items]);
   };
+
   const plusItem = () => {
-    const lastIds = items[items.length - 1];
+    const lastIds = items[items.length - 1] ?? { ids: 0 };
+    // console.log(lastIds);
     items.push({ ids: lastIds.ids + 1 });
     setItems([...items]);
   };
