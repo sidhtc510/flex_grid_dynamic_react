@@ -29,6 +29,7 @@ export default function Menu({ updateStyles }) {
 
   return (
     <form className="menu" onSubmit={funct}>
+  
       <div className="flexDirectionWrapper">
         <label htmlFor="flexDirection">flex-direction</label>
         <select

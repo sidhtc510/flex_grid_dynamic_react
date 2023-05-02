@@ -14,7 +14,7 @@ function App() {
 
   // const [items, setItems] = useState(itemsDefault)
   const [items, setItems] = useState(() => {
-    return JSON.parse(localStorage.getItem("quantity")) ?? localStorage.setItem("quantity", JSON.stringify(itemsDefault)); // можно ли так записать в ЛС? без использования useEffect
+    return JSON.parse(localStorage.getItem("quantity")) ?? localStorage.setItem("quantity", JSON.stringify(itemsDefault)); // можно ли так записать в ЛокалСторэдж? без использования useEffect.  Я так предполагаю что вместо ...setItem('quantity').... нужно установить пустой массив [] , а ..setItem('quantity').... прописать ниже обернув его в useEffect
   });
 
   useEffect(() => {
